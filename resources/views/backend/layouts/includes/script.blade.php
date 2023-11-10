@@ -9,3 +9,7 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('ui/backend') }}/assets/js/main.js"></script>
+<!-- Toastr js -->
+<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+  {!! Toastr::message() !!}

@@ -24,3 +24,6 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('ui/backend') }}/assets/css/style.css" rel="stylesheet">
+
+  <!-- Toastr -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
