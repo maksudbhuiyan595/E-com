@@ -1,11 +1,14 @@
 <ul class="sidebar-nav" id="sidebar-nav">
 
+@if (checkUserPermission('dashboard'))
+  
 <li class="nav-item">
-  <a class="nav-link " href="index.html">
+  <a class="nav-link " href="{{ route('dashboard') }}">
     <i class="bi bi-grid"></i>
     <span>Dashboard</span>
   </a>
 </li><!-- End Dashboard Nav -->
+@endif
 
 <li class="nav-item">
   <a class="nav-link collapsed"  href="#">
@@ -42,11 +45,13 @@
     </a>
 </li>
 <!-- orders -->
+@if(checkUserPermission('role.index'))
 <li class="nav-item">
   <a class="nav-link collapsed" href="{{ route('role.index') }}">
     <i class="bi bi-menu-button-wide"></i><span>Roles</span>
     </a>
 </li>
+@endif
 <!-- roles -->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#">

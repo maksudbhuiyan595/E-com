@@ -28,7 +28,7 @@ class AuthController extends Controller
           if(auth()->attempt($cridentials))
           {
             toastr()->success("successfully login");
-            return redirect()->route("dashboard");
+            return redirect()->route("admin.home");
           }else
           {
             toastr()->error("invalid authenticate user");

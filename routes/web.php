@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('admin/home',[HomeController::class,'index'])->name('admin.home');
 Route::group(["prefix"=> "/admin"], function () {
-
+    
+    Route::get('/home',[HomeController::class,'index'])->name('admin.home');
     Route::get('/login',[AuthController::class,'login'])->name('login');
     Route::post('/authenticate',[AuthController::class,'authenticate'])->name('authenticate');
 
-    Route::group(['middleware'=> 'auth'], function () {
+    Route::group(['middleware'=>['auth','checkPermission']], function () {
 
         Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
         Route::get('/logout',[AuthController::class,'logout'])->name('logout');
