@@ -37,6 +37,8 @@ Route::group(["prefix"=> "/admin"], function () {
             Route::get('/roles/destroy/{roleId}','destroy')->name('role.destroy');
             Route::get('/roles/assign/{roleId}','assign')->name('role.assign');
 
+            Route::post('/assign/role-permissions/{roleId}','rolePermission')->name('role.permission');
+
         });
     });
 

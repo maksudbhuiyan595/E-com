@@ -54,11 +54,5 @@
     </a>
 </li>
 <!-- users -->
-<li class="nav-item">
-  <a class="nav-link collapsed" href="#">
-    <i class="bi bi-menu-button-wide"></i><span>Settings</span>
-    </a>
-</li>
-<!-- Seetings -->
 
 </ul>

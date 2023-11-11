@@ -23,7 +23,8 @@
                 </div>
                 <hr>
                 <div class="card-body">
-                    <form action="">
+                    <form action="{{ route('role.permission',$role->id)}}" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="card p-3">
@@ -32,15 +33,17 @@
                                             <h5>{{ $role->name }}</h5>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="checkbox" id="scales" name="allCheckbox">
-                                            <label for="scales">All checked</label>
+                                            <input type="checkbox" name="" form-check-label id="all" name="allCheckbox">
+                                            <label for="all">All checked</label>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <input type="checkbox" id="scales" name="allCheckbox">
-                                            <label for="scales">All checked</label>
+                                            @foreach ($permissions as $permission)
+                                            <input type="checkbox"  name="permission[]" @if (in_array($permission->id,$assignPermissions)) checked @endif class="form-check-label" value="{{ $permission->id }}" id="checkbox1">
+                                            <label class="mb-1" for="checkbox1">{{ ucfirst($permission->name) }}</label><br>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
