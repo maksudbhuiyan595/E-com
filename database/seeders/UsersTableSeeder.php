@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
         User::create(
             [
                 "id"=> "1",
-                "name"=> "Admin",
+                "userName"=> "Admin",
                 "email"=> "admin@gmail.com",
                 "password"=> bcrypt("654321"),
                 "role"=> "admin",
@@ -27,7 +27,7 @@ class UsersTableSeeder extends Seeder
             User::create(
                 [
                     "id"=> "2",
-                    "name"=> "Manager",
+                    "userName"=> "Manager",
                     "email"=> "manager@gmail.com",
                     "password"=> bcrypt("654321"),
                     "role"=> "manager",
@@ -37,7 +37,7 @@ class UsersTableSeeder extends Seeder
         User::create(
             [
                 "id"=> "3",
-                "name"=> "Seller",
+                "userName"=> "Seller",
                 "email"=> "seller@gmail.com",
                 "password"=> bcrypt("654321"),
                 "role"=> "seller",
