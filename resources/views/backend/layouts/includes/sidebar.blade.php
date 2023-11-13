@@ -19,17 +19,23 @@
  
 </li><!-- Categories-->
 @endif
+
+@if(checkUserPermission('subCategory.index'))
 <li class="nav-item">
-  <a class="nav-link collapsed"  href="#">
+  <a class="nav-link collapsed"  href="{{ route('subCategory.index') }}">
     <i class="bi bi-menu-button-wide"></i><span>Sub Category</span>
     </a>
 </li>
+@endif
+
+@if(checkUserPermission('brand.index'))
 <li class="nav-item">
-  <a class="nav-link collapsed"  href="#">
+  <a class="nav-link collapsed"  href="{{ route('brand.index') }}">
     <i class="bi bi-menu-button-wide"></i><span>Brands</span>
     </a>
 </li>
 <!-- Brands -->
+@endif
 <li class="nav-item">
   <a class="nav-link collapsed"  href="#">
     <i class="bi bi-menu-button-wide"></i><span>Products</span>

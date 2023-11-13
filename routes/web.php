@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AuthController;
+use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HomeController;
@@ -64,6 +65,14 @@ Route::group(["prefix"=> "/admin"], function () {
             Route::get('/sub-categories/edit/{subCategoryId}','edit')->name('subCategory.edit');
             Route::post('/sub-categories/update/{subCategoryId}','update')->name('subCategory.update');
             Route::get('/sub-categories/destroy/{subCategoryId}','destroy')->name('subCategory.destroy');
+        });
+        Route::controller(BrandController::class)->group(function () {
+            Route::get('/brands/index','index')->name('brand.index');
+            Route::get('/brands/create','create')->name('brand.create');
+            Route::post('/brands/store','store')->name('brand.store');
+            Route::get('/brands/edit/{brandId}','edit')->name('brand.edit');
+            Route::post('/brands/update/{brandId}','update')->name('brand.update');
+            Route::get('/brands/destroy/{brandId}','destroy')->name('brand.destroy');
         });
     });
 

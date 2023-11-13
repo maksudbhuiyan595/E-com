@@ -7,7 +7,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item">Tables</li>
-            <li class="breadcrumb-item active">Categories</li>
+            <li class="breadcrumb-item active">Brands</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -18,8 +18,8 @@
           <div class="col-lg-12">
               <div class="card">
                     <div class="d-flex justify-content-between p-3">
-                      <h3 class=""><b>Categories List</b></h3>
-                       <a href="{{ route('category.create') }}" class="btn btn-primary">+Add Cateogry</a>
+                      <h3 class=""><b>Brands List</b></h3>
+                       <a href="{{ route('brand.create') }}" class="btn btn-primary">+Add Brand</a>
                       </div>
                       <hr>
             <div class="card-body">
@@ -34,16 +34,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($categories as $id=>$category)
+                    @foreach ($brands as $id=>$brand)
                         
                     <tr>
                       <td scope="row">{{ $id+1 }} </td>
-                      <td>{{ $category->name }}</td>
-                      <td>{{ $category->status ? "active" : "inactive" }}</td>
+                      <td>{{ $brand->name }}</td>
+                      <td>{{ $brand->status ? "active" : "inactive" }}</td>
                       <td>
                       
-                        <a class="btn btn-secondary" href="{{ route('category.edit',$category->id) }}">Edit</a>
-                        <a class="btn btn-secondary" href="{{ route('category.destroy',$category->id) }}">Delete</a>
+                        <a class="btn btn-secondary" href="{{ route('brand.edit',$brand->id) }}">Edit</a>
+                        <a class="btn btn-secondary" href="{{ route('brand.destroy',$brand->id) }}">Delete</a>
                       </td>
                     </tr>
                     @endforeach

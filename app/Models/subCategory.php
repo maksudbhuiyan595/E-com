@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class subCategory extends Model
 {
     use HasFactory;
-    protected $fillable = ['name'] ;
+    protected $guarded = [];
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
