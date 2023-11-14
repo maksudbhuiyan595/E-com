@@ -36,12 +36,15 @@
 </li>
 <!-- Brands -->
 @endif
+
+@if(checkUserPermission('product.index'))
 <li class="nav-item">
-  <a class="nav-link collapsed"  href="#">
+  <a class="nav-link collapsed"  href="{{ route('product.index') }}">
     <i class="bi bi-menu-button-wide"></i><span>Products</span>
     </a>
 </li>
 <!-- products -->
+@endif
 <li class="nav-item">
   <a class="nav-link collapsed" href="#">
     <i class="bi bi-menu-button-wide"></i><span>Shipping</span>

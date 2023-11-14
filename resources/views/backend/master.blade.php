@@ -34,6 +34,9 @@
 
   <!-- Vendor JS Files -->
   @include('backend.layouts.includes.script')
+
+  @yield('script')
+  
 </body>
 
 </html>

@@ -5,9 +5,11 @@ use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HomeController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Frontend\WebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +22,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::controller(WebController::class)->group(function () {
+    Route::get('/','index')->name('web.index');
+});
 
 Route::group(["prefix"=> "/admin"], function () {
     
@@ -74,6 +80,15 @@ Route::group(["prefix"=> "/admin"], function () {
             Route::post('/brands/update/{brandId}','update')->name('brand.update');
             Route::get('/brands/destroy/{brandId}','destroy')->name('brand.destroy');
         });
+        Route::controller(ProductController::class)->group(function () {
+            Route::get('/products/index','index')->name('product.index');
+            Route::get('/products/create','create')->name('product.create');
+            Route::post('/products/store','store')->name('product.store');
+            Route::get('/products/edit/{productId}','edit')->name('product.edit');
+            Route::post('/products/update/{productId }','update')->name('product.update');
+            Route::get('/products/destroy/{productId}','destroy')->name('product.destroy');
+        });
+
     });
 
 });
